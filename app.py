@@ -30,3 +30,5 @@ class Gadget(db.Model):
     def __repr__(self):
         return f"model: {self.model}, type: {self.type}"
 
+if __name__ == '__main__':
+    app.run(port=5000, host='0.0.0.0', debug=True)

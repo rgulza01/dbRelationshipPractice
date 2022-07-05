@@ -8,6 +8,13 @@ app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
+#testing webpage with docker
+@app.route('/home')
+@app.route('/')
+def home():
+    return "Bismillah!"
+
+
 #one owner and many vacuums
 class Owner(db.Model):
     __tablename__ = 'owner'

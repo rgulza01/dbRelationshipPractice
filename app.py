@@ -4,7 +4,15 @@ from sqlalchemy import ForeignKey
 import os
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URI")
+#app.config["SQLALCHEMY_DATABASE_URI"] = mysql+pymysql://serveradminloginname:anypassword@servername:3306/anydatabase
+app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://radiagulzan@db-relationship-practice-mysql:anypassword!@db-relationship-practice-mysql.mysql.database.azure.com:3306/examaple_db"
+#cnx = mysql.connector.connect(user="radiagulzan@db-relationship-practice-mysql", 
+# password={your_password}, 
+# host="db-relationship-practice-mysql.mysql.database.azure.com", 
+# port=3306, 
+# database={your_database}, 
+# ssl_ca={ca-cert filename}, 
+# ssl_verify_cert=true)
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 

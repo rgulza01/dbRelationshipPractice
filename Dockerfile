@@ -1,9 +1,7 @@
-# Python base image.
-FROM python:3.7
-# Create and set the work directory inside the image named 'app'
-WORKDIR /app
-# Execute a pip install command using the list 'requirements.txt'
-RUN pip install Flask
+FROM python:3.8.9-slim-buster
+WORKDIR /directoryForMyApp
+ADD . /directoryForMyApp/
+RUN pip install -r requirements.txt
 # Copy the app file into the image working directory
 COPY app.py .
 # State the listening port for the container. 
